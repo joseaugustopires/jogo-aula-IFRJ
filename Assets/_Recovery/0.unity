@@ -955,7 +955,7 @@ Transform:
   m_GameObject: {fileID: 295566415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11, y: 0.05, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0.8, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1267,6 +1267,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b977d9afb4847e4c87ef614e845f4a3, type: 3}
+--- !u!1 &429326063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1025614028488204122, guid: c827096c08c6057428ea918c5a37f225, type: 3}
+  m_PrefabInstance: {fileID: 1007418687768051624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &429326068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429326063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7730f81d1fb844468d833c6ada6de4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InimigoHealth
+  vidaMaxima: 100
 --- !u!1 &451148387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,7 +2029,6 @@ Transform:
   m_Children:
   - {fileID: 262958433}
   - {fileID: 295566416}
-  - {fileID: 1256441296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &842868304
@@ -2726,24 +2743,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1126787931 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1025614028488204122, guid: c827096c08c6057428ea918c5a37f225, type: 3}
-  m_PrefabInstance: {fileID: 1007418687768051624}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1126787936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126787931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7730f81d1fb844468d833c6ada6de4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InimigoHealth
-  vidaMaxima: 100
 --- !u!1 &1180448145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,58 +2819,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180448145}
   m_CullTransparentMesh: 1
---- !u!1 &1256441295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1256441296}
-  - component: {fileID: 1256441297}
-  m_Layer: 0
-  m_Name: AtackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1256441296
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256441295}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.22, y: 0.09, z: 0}
-  m_LocalScale: {x: 1, y: 1.393, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 842868303}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1256441297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256441295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f29ff2dd1171d254fbac17cb0dc98857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
-  animator: {fileID: 0}
-  pontoDeAtaque: {fileID: 0}
-  raioDoAtaque: 5
-  layerInimigo:
-    serializedVersion: 2
-    m_Bits: 0
-  danoAtaque: 20
-  taxaDeAtaque: 2
 --- !u!1 &1278937954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,6 +2929,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1389979338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1025614028488204122, guid: c827096c08c6057428ea918c5a37f225, type: 3}
+  m_PrefabInstance: {fileID: 1806079825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1389979343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389979338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7730f81d1fb844468d833c6ada6de4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InimigoHealth
+  vidaMaxima: 100
 --- !u!1 &1503463214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,14 +3667,13 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.69578505
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5593093227960155172, guid: c827096c08c6057428ea918c5a37f225, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1025614028488204122, guid: c827096c08c6057428ea918c5a37f225, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2074194583}
+      addedObject: {fileID: 1389979343}
   m_SourcePrefab: {fileID: 100100000, guid: c827096c08c6057428ea918c5a37f225, type: 3}
 --- !u!1 &1857265151
 GameObject:
@@ -3746,8 +3710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -0.99997}
-  m_SizeDelta: {x: -2, y: -2}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -4.0000076, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857265153
 MonoBehaviour:
@@ -4017,24 +3981,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   parallaxEffect: 0.5
   infiniteScrolling: 1
---- !u!1 &2074194578 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1025614028488204122, guid: c827096c08c6057428ea918c5a37f225, type: 3}
-  m_PrefabInstance: {fileID: 1806079825}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2074194583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074194578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7730f81d1fb844468d833c6ada6de4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InimigoHealth
-  vidaMaxima: 100
 --- !u!1 &2104957430
 GameObject:
   m_ObjectHideFlags: 0
@@ -4311,14 +4257,13 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.62919664
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5593093227960155172, guid: c827096c08c6057428ea918c5a37f225, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1025614028488204122, guid: c827096c08c6057428ea918c5a37f225, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1126787936}
+      addedObject: {fileID: 429326068}
   m_SourcePrefab: {fileID: 100100000, guid: c827096c08c6057428ea918c5a37f225, type: 3}
 --- !u!1001 &1870756002097575947
 PrefabInstance:

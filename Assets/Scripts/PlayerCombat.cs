@@ -2,32 +2,43 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public Transform pontoDeAtaque; // Onde o ataque acontece
-    public float raioDoAtaque = 0.5f; // Tamanho do ataque
-    public LayerMask layerInimigo; // Para saber o que é inimigo
+    [Header("Configurações")]
+    public Animator animator; // Referência para o Animator
+    public Transform pontoDeAtaque;
+    public float raioDoAtaque = 0.5f;
+    public LayerMask layerInimigo;
     public int danoAtaque = 20;
+
+    [Header("Tempo de Ataque")]
+    public float taxaDeAtaque = 2f; // Quantos ataques por segundo
+    float proximoAtaqueTempo = 0f;
 
     void Update()
     {
-        // Altere "Fire1" para a tecla que preferir (ex: KeyCode.Z ou botão do mouse)
-        if (Input.GetButtonDown("Fire1")) 
+        // Verifica se já passou tempo suficiente para atacar de novo
+        if (Time.time >= proximoAtaqueTempo)
         {
-            Atacar();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Atacar();
+                // Define quando poderá atacar novamente (Ex: agora + 0.5 segundos)
+                proximoAtaqueTempo = Time.time + 1f / taxaDeAtaque;
+            }
         }
     }
 
     void Atacar()
     {
-        // 1. Tocar animação de ataque (se tiver)
-        // animator.SetTrigger("Atacar"); 
+        // 1. Toca a animação baseada no Trigger que criamos
+        animator.SetTrigger("Atacar");
 
-        // 2. Detectar inimigos na área de alcance
+        // 2. Detecta inimigos
         Collider2D[] inimigosAtingidos = Physics2D.OverlapCircleAll(pontoDeAtaque.position, raioDoAtaque, layerInimigo);
 
-        // 3. Causar dano neles
+        // 3. Aplica dano
         foreach (Collider2D inimigo in inimigosAtingidos)
         {
-            // Tenta pegar o script de vida do inimigo
+            // Tenta pegar o script no próprio objeto ou nos pais/filhos
             InimigoHealth scriptInimigo = inimigo.GetComponent<InimigoHealth>();
             
             if (scriptInimigo != null)
@@ -37,12 +48,9 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    // Isso desenha uma bolinha vermelha na cena para você ver o alcance do ataque (apenas no editor)
     void OnDrawGizmosSelected()
     {
-        if (pontoDeAtaque == null)
-            return;
-
+        if (pontoDeAtaque == null) return;
         Gizmos.DrawWireSphere(pontoDeAtaque.position, raioDoAtaque);
     }
 }
